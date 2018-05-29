@@ -86,7 +86,7 @@ class LoginComponent extends Component {
             <Button type="primary" htmlType="submit" className="login-form-button"> 登陆</Button>
             <Link className="reg-link" to='/register'>还没有账号？去注册</Link>
           </FromItem>
-          
+
         </Form>
       </div>
 
