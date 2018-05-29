@@ -16,7 +16,6 @@ const userNamePattern = /^[a-zA-Z0-9]{6,14}$/;
 const passwordPattern = /^[a-zA-Z0-9]{6,14}$/;
 
 
-
 class LoginComponent extends Component {
   handleSubmit = (e) => {
       e.preventDefault();
@@ -75,7 +74,6 @@ class LoginComponent extends Component {
             })(
               <Checkbox>记住密码</Checkbox>
             )}
-
             <a className="login-form-forgot" href="">忘记密码</a>
             <Button type="primary" htmlType="submit" className="login-form-button"> 登陆</Button>
             <a href="">账号注册</a>
