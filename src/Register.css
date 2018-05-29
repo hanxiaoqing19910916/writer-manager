@@ -1,0 +1,17 @@
+.reg-form-contaner {
+  width: 460px;
+  height: 800px;
+  margin: 70px auto;
+  background-color: white;
+  padding-top: 30px;
+}
+
+.reg-form-contaner .reg-form {
+  max-width: 380px;
+  margin: 0px auto;
+}
+
+
+.reg-form .reg-form-item {
+  margin-bottom: 20px;
+}

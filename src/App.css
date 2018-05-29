@@ -5,19 +5,20 @@ body {
   background-color:#2d2828;
 }
 
-.form-contaner {
+.login-form-contaner {
   width: 350px;
-  height: 380px;
+  height: 420px;
   margin: 160px auto;
   background-color: white;
   padding-top: 40px;
 }
-.form-contaner .login-form {
+.login-form-contaner .login-form {
    max-width: 300px;
    margin: 0px auto;
 }
+
 .login-form .form-item {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .form-item .login-form-forgot {
@@ -25,9 +26,15 @@ body {
 }
 
 .form-item .login-form-button {
-  /* display: block; */
   width: 100%
 }
+
+.form-item .reg-link {
+  float: right;
+}
+
+
+
 
 .form-header-label {
   font-size: 18px;

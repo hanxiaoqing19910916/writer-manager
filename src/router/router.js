@@ -5,8 +5,11 @@ import {
   Switch
 } from 'react-router-dom';
 
-import LoginComponent from '../LoginComponent'
 import App from '../App.js';
+import LoginComponent from '../LoginComponent'
+import RegisterComponent from '../RegisterComponent'
+
+
 
 export default class AppRouter extends React.Component {
   constructor(props) {
@@ -19,6 +22,7 @@ export default class AppRouter extends React.Component {
         <Switch>
           <Route exact path="/" component={App}></Route>
           <Route path='/login' component={LoginComponent}/>
+          <Route path='/register' component={RegisterComponent}/>
         </Switch>
       </BrowserRouter>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
+
 import {
   Form,
   Icon,
@@ -10,10 +11,17 @@ import {
   Select,
 } from 'antd';
 
+import {
+  Link,
+  Route,
+  Switch
+} from 'react-router-dom';
+
+
 const FromItem = Form.Item;
 
 const userNamePattern = /^[a-zA-Z0-9]{6,14}$/;
-const passwordPattern = /^[a-zA-Z0-9]{6,14}$/;
+const passwordPattern = /^[a-zA-Z0-9]{6,18}$/;
 
 
 class LoginComponent extends Component {
@@ -39,7 +47,7 @@ class LoginComponent extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div className="form-contaner">
+      <div className="login-form-contaner">
         <div className="form-header-label">欢迎登陆</div>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <FromItem className="form-item">
@@ -49,7 +57,7 @@ class LoginComponent extends Component {
           </FromItem>
 
           <FromItem className="form-item">
-            {this.fieldDecorator('password', '请输入6~14位字母或数字', passwordPattern)(
+            {this.fieldDecorator('password', '请输入6~18位字母或数字', passwordPattern)(
               <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0, .25)' }} />} placeholder="密码" />
             )}
           </FromItem>
@@ -76,8 +84,9 @@ class LoginComponent extends Component {
             )}
             <a className="login-form-forgot" href="">忘记密码</a>
             <Button type="primary" htmlType="submit" className="login-form-button"> 登陆</Button>
-            <a href="">账号注册</a>
+            <Link className="reg-link" to='/register'>还没有账号？去注册</Link>
           </FromItem>
+          
         </Form>
       </div>
 
