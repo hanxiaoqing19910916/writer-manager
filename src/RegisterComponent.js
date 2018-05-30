@@ -120,7 +120,7 @@ class RegisterComponent extends Component {
               })(
                 <Input className="check-input" prefix={this.useIcon('question')} placeholder="验证码" />
               )}
-             <img className="check-image"></img>
+             {/* <img className="check-image"></img> */}
           </FromItem>
 
           <FromItem> 
@@ -164,8 +164,8 @@ class RegisterComponent extends Component {
   }
 
   
-  validateTocheckCode(){
-
+  validateTocheckCode(rule, value, callback){
+    callback();
   }
 }
 
