@@ -23,8 +23,10 @@ const userNamePattern = /^[a-zA-Z0-9]{6,14}$/;
 const passwordPattern = /^[a-zA-Z0-9]{6,18}$/;
 const nickPattern = /^[\u4e00-\u9fa5a-zA-Z0-9]{4,10}$/;
 const qqPattern = /^[1-9][0-9]{4,10}$/gim;
-const wxPattern =/^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}$/;
+const wxPattern = /^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}$/;
 const phonePattern = /^[1][3,4,5,7,8][0-9]{9}$/;
+const realNamePattern = /^[\u4e00-\u9fa5]{2,4}$/;
+const idCardPattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
 
 
 
@@ -120,7 +122,7 @@ class RegisterComponent extends Component {
               })(
                 <Input className="check-input" prefix={this.useIcon('question')} placeholder="验证码" />
               )}
-             {/* <img className="check-image"></img> */}
+             <img className="check-image"></img>
           </FromItem>
 
           <FromItem> 
