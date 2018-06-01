@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import 'whatwg-fetch';
 
 import {
   Form,
@@ -26,6 +27,21 @@ const passwordPattern = /^[a-zA-Z0-9]{6,18}$/;
 class LoginComponent extends Component {
   handleSubmit = (e) => {
       e.preventDefault();
+
+      var myFetchOptions = {
+        method: 'GET',
+        mode: 'no-cors',
+        'Access-Control-Allow-Origin': '*'
+      };
+      fetch("http://192.168.88.38:4000/users")
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
       this.props.form.validateFields((err, values) => {
         if (!err) {
           console.log("values of form", values);
