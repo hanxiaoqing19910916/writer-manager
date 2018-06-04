@@ -29,11 +29,13 @@ class LoginComponent extends Component {
       e.preventDefault();
 
       var myFetchOptions = {
-        method: 'GET',
-        mode: 'no-cors',
-        'Access-Control-Allow-Origin': '*'
+        method: 'POST',
+        body: JSON.stringify({"username": "han", "password": "123"}),
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
       };
-      fetch("http://192.168.88.38:4000/users")
+      fetch("http://192.168.88.38:4000/login", myFetchOptions)
       .then(response => response.json())
       .then(json => {
         console.log(json);
@@ -67,13 +69,13 @@ class LoginComponent extends Component {
         <Form onSubmit={this.handleSubmit} className="login-form">
           <FromItem className="form-item">
             {this.fieldDecorator('userName', '请输入6~14位字母或数字', userNamePattern)(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0, .25)' }} />} placeholder="用户名" />
+              <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0, .25)'}} />} placeholder="用户名" />
             )}
           </FromItem>
 
           <FromItem className="form-item">
             {this.fieldDecorator('password', '请输入6~18位字母或数字', passwordPattern)(
-              <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0, .25)' }} />} placeholder="密码" />
+              <Input type="password" prefix={<Icon type="lock" style={{color: 'rgba(0,0,0, .25)'}} />} placeholder="密码" />
             )}
           </FromItem>
 
