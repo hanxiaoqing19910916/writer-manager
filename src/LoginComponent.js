@@ -25,12 +25,19 @@ const passwordPattern = /^[a-zA-Z0-9]{6,18}$/;
 
 
 class LoginComponent extends Component {
+
   handleSubmit = (e) => {
       e.preventDefault();
 
+      
+      const loginParams = {
+        "username": "TOM", 
+        "password": "123",
+        "time_stamp": new Date().getTime()
+      };
       var myFetchOptions = {
         method: 'POST',
-        body: JSON.stringify({"username": "han", "password": "123"}),
+        body: JSON.stringify(loginParams),
         headers: new Headers({
           'Content-Type': 'application/json'
         })
